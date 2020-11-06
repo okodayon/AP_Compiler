@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include<ctype.h>
 
 #define N 256
@@ -109,7 +110,7 @@ static int tkcheck(Token **cur){
     p = cur;
 
     //正しければtypeにNUMBERを持っている構造体がココに来ているはず。
-    if((*p)->type == "NUMBER"){
+    if(strcmp((*p)->type,"NUMBER") == 0){
         return (*p)->val;
     }
     fprintf(stderr,"入力された文字列が [数字 (+ or -) 数字] の形になっていません");
